@@ -1,0 +1,232 @@
+/* General Styles */
+body {
+    background-color: #0D0714;
+    font-family: "Akaya Kanadaka", system-ui;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #9E78CF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #15101C;
+    color: #fff;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #211232;
+}
+
+nav .navbar-brand span {
+    font-size: 30px;
+    color: #9E78CF;
+}
+
+nav img {
+    width: 50px;
+}
+
+/* Input Styles */
+#userInputTask {
+    background-color: transparent;
+    border-color: #3E1671;
+    color: white;
+}
+
+#userInputTask::placeholder {
+    color: #9E78CF;
+}
+
+.btn.clear-all {
+    background-color: rgb(177, 56, 56);
+}
+
+/* Task Styles */
+.task {
+    background-color: #15101C;
+    color: #9E78CF;
+}
+
+.task .check:hover {
+    background-color: rgb(40, 138, 77);
+}
+
+.task .delete:hover {
+    background-color: rgb(177, 56, 56);
+}
+/* Button Styles */
+.btn.unfinish {
+    background-color: #198754;
+    color: white;
+    border: none;
+}
+.btn.unfinish:hover {
+    background-color: #157347;
+}
+.btn.delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+.btn.delete:hover {
+    background-color: #bb2d3b;
+}
+.btn.edit {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+.btn.edit:hover {
+    background-color: #5a6268;
+}
+
+/* Edit Overlay Styles */
+.edit-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.edit-overlay.visible {
+    display: block;
+}
+.edit-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #15101C;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    color: #9E78CF;
+}
+.edit-container h3 {
+    margin: 0 0 1.5rem 0;
+    color: #9E78CF;
+}
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9E78CF;
+    cursor: pointer;
+}
+#editTaskInput {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    border: 1px solid #9E78CF;
+    border-radius: 5px;
+    color: #9E78CF;
+}
+#editTaskInput:focus {
+    outline: none;
+    border-color: #3E1671;
+}
+.edit-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-primary {
+    background-color: #9E78CF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+.btn-primary:hover {
+    background-color: #3E1671;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    height: 500px;
+}
+
+.progress {
+    height: 30px;
+    background-color: #15101C;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, #9E78CF, #3E1671);
+    border-radius: 15px;
+    transition: width 0.3s ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+#taskStatus {
+    font-size: 14px;
+    color: #9E78CF;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+#removeCheckedBtn {
+    background-color: #B13838;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 10px auto;
+    display: block;
+    max-width: 200px;
+}
+
+#removeCheckedBtn:hover {
+    background-color: #8C2B2B;
+    transform: translateY(-1px);
+}
+
+#removeCheckedBtn i {
+    margin-left: 5px;
+}
