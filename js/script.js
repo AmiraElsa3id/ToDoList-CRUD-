@@ -145,16 +145,16 @@ function editTask(index) {
 //     editOverlay.style.display = 'block';
     
 // }
-saveEdit.addEventListener("click",function(){
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            displayTask(tasks);
-        updateProgress();
 
-    editOverlay.style.display = 'none';
 
-})
 // Save edited task
-
+function saveEditedTask(){
+        tasks[currentEditIndex] = editTaskInput.value;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        displayTask(tasks);
+        updateProgress();
+        editOverlay.style.display = 'none';
+}
 
 // Delete a certain task
 function deleteTask(index){
