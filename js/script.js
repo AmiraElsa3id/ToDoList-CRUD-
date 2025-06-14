@@ -7,6 +7,7 @@ var editOverlay = document.getElementById("editOverlay");
 var closeEdit = document.getElementById("closeEdit");
 var cancelEdit = document.getElementById("cancelEdit");
 var saveEdit = document.getElementById("saveEdit");
+var currentEditIndex;
  // 'tasks' or 'finishedtasks'
 
 // Add event listeners for the custom overlay
@@ -134,6 +135,7 @@ function unfinishTask(index) {
 
 // Edit a task
 function editTask(index) {
+    currentEditIndex = index;
         editTaskInput.value = tasks[index];
     // editOverlay.classList.add('visible');
     editOverlay.style.display = 'block';
