@@ -7,47 +7,47 @@ var editOverlay = document.getElementById("editOverlay");
 var closeEdit = document.getElementById("closeEdit");
 var cancelEdit = document.getElementById("cancelEdit");
 var saveEdit = document.getElementById("saveEdit");
-var currentEditIndex = -1;
-var currentEditType = 'tasks'; // 'tasks' or 'finishedtasks'
+ // 'tasks' or 'finishedtasks'
 
 // Add event listeners for the custom overlay
 if (closeEdit) {
     closeEdit.addEventListener('click', () => {
         editOverlay.style.display = 'none';
-        currentEditIndex = -1;
+        
     });
 }
 
 if (cancelEdit) {
     cancelEdit.addEventListener('click', () => {
         editOverlay.style.display = 'none';
-        currentEditIndex = -1;
+        
     });
 }
 
-if (saveEdit) {
-    saveEdit.addEventListener('click', saveEditedTask);
-}
+// if (saveEdit) {
+//     saveEdit.addEventListener('click', saveEditedTask);
+// }
 
 var tasks;
 var finishedTasks;
 
-// check the localStorage for tasks
-if( localStorage.getItem("tasks")==null){
-   tasks =[];
-    
-}else{
-   tasks= JSON.parse(localStorage.getItem("tasks"))
+// Initialize tasks arrays
+if( localStorage.getItem("tasks") !== null){
+   tasks = JSON.parse(localStorage.getItem("tasks"));
    displayTask(tasks);
+} else {
+   tasks = [];
 }
 
-// check the localStorage for finishedTasks
-if( localStorage.getItem("finishedtasks")==null){
-    finishedTasks =[];
- }else{
-    finishedTasks= JSON.parse(localStorage.getItem("finishedtasks"))
- }
- displayFinishedTask(finishedTasks);
+if( localStorage.getItem("finishedtasks") !== null){
+    finishedTasks = JSON.parse(localStorage.getItem("finishedtasks"));
+    displayFinishedTask(finishedTasks);
+} else {
+    finishedTasks = [];
+}
+
+// Update progress after initialization
+updateProgress();
 
 //  Add Task
 function addTask(){
@@ -101,9 +101,6 @@ function displayFinishedTask(arr){
                                 <button onclick="unfinishTask(${i})" class="btn unfinish">
                                     <i class="fa-solid fa-undo"></i>
                                 </button>
-                                <button onclick="editTask(${i})" class="btn edit">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
                                 <button onclick="deleteFinishedTask(${i})" class="btn delete">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -137,35 +134,27 @@ function unfinishTask(index) {
 
 // Edit a task
 function editTask(index) {
-    if (currentEditType === 'tasks') {
         editTaskInput.value = tasks[index];
-        currentEditIndex = index;
-    } else {
-        editTaskInput.value = finishedTasks[index];
-        currentEditIndex = index;
-    }
     // editOverlay.classList.add('visible');
     editOverlay.style.display = 'block';
+    
 }
-
-// Save edited task
-function saveEditedTask() {
-    const newTask = editTaskInput.value.trim();
-    if (newTask) {
-        if (currentEditType === 'tasks') {
-            tasks[currentEditIndex] = newTask;
+// function editFinishedTask(index) {
+//         editTaskInput.value = finishedTasks[index];
+//     // editOverlay.classList.add('visible');
+//     editOverlay.style.display = 'block';
+    
+// }
+saveEdit.addEventListener("click",function(){
             localStorage.setItem("tasks", JSON.stringify(tasks));
             displayTask(tasks);
-        } else {
-            finishedTasks[currentEditIndex] = newTask;
-            localStorage.setItem("finishedtasks", JSON.stringify(finishedTasks));
-            displayFinishedTask(finishedTasks);
-        }
         updateProgress();
-    }
+
     editOverlay.style.display = 'none';
-    currentEditIndex = -1;
-}
+
+})
+// Save edited task
+
 
 // Delete a certain task
 function deleteTask(index){
