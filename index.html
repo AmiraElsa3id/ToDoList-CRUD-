@@ -76,14 +76,14 @@
                     </div>
                     </div>
                 <div class="row justify-content-center gy-3 " id="tasks">
-                    <!-- <div class="col-lg-7">
+                    <div class="col-lg-7">
                         <div class="task d-flex justify-content-between p-2 rounded-2">
-                            <p class=" m-0 d-flex align-items-center "> ${arr[i]}</p>
+                            <p class=" m-0 d-flex align-items-center "> task2</p>
                             <div class="icons">
-                                <button onclick="checkTask(${i})" class="btn check">
+                                <button onclick="checkTask()" class="btn check">
                                     <i class="fa-solid fa-check"></i>
                                 </button>
-                                <button onclick="editTask(${i})" class="btn edit">
+                                <button onclick="editTask()" class="btn edit">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
                                 <button data-id="${arr[i].id}" onclick="deleteTask(this)" class="btn delete">
@@ -91,7 +91,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <!-- Tasks To Do end -->
@@ -103,38 +103,23 @@
                     </div>
                     </div>                
                 <div class="row justify-content-center  gy-3" id="finishedTasks">
-                    <!-- <div class="col-lg-7">
+                     <div class="col-lg-7">
                         <div class="task d-flex justify-content-between p-2 rounded-2">
-                            <p class=" m-0 d-flex align-items-center text-decoration-line-through">${arr[i]}</p>
+                            <p class=" m-0 d-flex align-items-center text-decoration-line-through">task 3</p>
                             <div class="icons">
-                                <button onclick="unfinishTask(${i})" class="btn unfinish">
+                                <button onclick="unfinishTask()" class="btn unfinish">
                                     <i class="fa-solid fa-undo"></i>
                                 </button>
-                                <button onclick="editTask(${i})" class="btn edit">
+                                <button onclick="editTask()" class="btn edit">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
-                                <button onclick="deleteFinishedTask(${i})" class="btn delete">
+                                <button onclick="deleteFinishedTask()" class="btn delete">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7">
-                        <div class="task d-flex justify-content-between p-2 rounded-2">
-                            <p class=" m-0 d-flex align-items-center text-decoration-line-through">${arr[i]}</p>
-                            <div class="icons">
-                                <button onclick="unfinishTask(${i})" class="btn unfinish">
-                                    <i class="fa-solid fa-undo"></i>
-                                </button>
-                                <button onclick="editTask(${i})" class="btn edit">
-                                    <i class="fa-solid fa-pen"></i>
-                                </button>
-                                <button onclick="deleteFinishedTask(${i})" class="btn delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <!-- Finished Tasks end -->
@@ -143,7 +128,7 @@
             <div class="progress">
                 <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <span id="taskStatus" class="text-success fw-bold"></span>
+            <span id="taskStatus" class="text-success fw-bold">  3 tasks finished out of 5</span>
             <button class="btn" id="removeCheckedBtn">Remove checked <i class="fas fa-times"></i></button>
         </div>
     

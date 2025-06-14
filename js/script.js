@@ -13,14 +13,14 @@ var currentEditType = 'tasks'; // 'tasks' or 'finishedtasks'
 // Add event listeners for the custom overlay
 if (closeEdit) {
     closeEdit.addEventListener('click', () => {
-        editOverlay.classList.remove('visible');
+        editOverlay.style.display = 'none';
         currentEditIndex = -1;
     });
 }
 
 if (cancelEdit) {
     cancelEdit.addEventListener('click', () => {
-        editOverlay.classList.remove('visible');
+        editOverlay.style.display = 'none';
         currentEditIndex = -1;
     });
 }
@@ -144,7 +144,8 @@ function editTask(index) {
         editTaskInput.value = finishedTasks[index];
         currentEditIndex = index;
     }
-    editOverlay.classList.add('visible');
+    // editOverlay.classList.add('visible');
+    editOverlay.style.display = 'block';
 }
 
 // Save edited task
@@ -162,7 +163,7 @@ function saveEditedTask() {
         }
         updateProgress();
     }
-    editOverlay.classList.remove('visible');
+    editOverlay.style.display = 'none';
     currentEditIndex = -1;
 }
 
